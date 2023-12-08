@@ -151,8 +151,8 @@ def preprocess(tokenizer, args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config_file', type=str, required=True)
-    parser.add_argument("--reprocess", action="store_true")
+    parser.add_argument('--config_file', defalult='P.ini', type=str, required=True)
+    parser.add_argument("--reprocess",default='', action="store_true")
     parser.add_argument("--seed", default=2021, type=int, help="Random state")
     parser.add_argument("--kfold", default=None, type=int, help="Number of folds K-fold cross validation")
     parser.add_argument("--separate_inputs", action="store_true",
