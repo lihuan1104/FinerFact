@@ -155,9 +155,9 @@ def print_results(results, epoch, dataset_split_name="Train", enable_logging=Tru
 def get_root_dir():
     root = None
     if os.name == "posix":
-        root = "../../fake_news_data"
+        root = "../../FinerFact"
     else:
-        root = "C:\\Workspace\\FakeNews\\fake_news_data"
+        root = r"C:\Users\lh\Desktop\CTI\FinerFact"
     return root
 
 

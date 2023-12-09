@@ -33,7 +33,7 @@ def get_raw_dir(args):
     """
     Archived function. Ignore this for now
     """
-    root = "C:\\Workspace\\FakeNews"
+    root = "C:\\Users\\lh\\Desktop\\CTI"
     if os.name == "posix":
         root = '..'
     path = osp.join(root, "Demo", "data", f"{args.dataset}", "raw")
@@ -236,7 +236,8 @@ if __name__ == "__main__":
     parser.add_argument('--train_path', help='train path')
     parser.add_argument('--valid_path', help='valid path')
     parser.add_argument("--bert_hidden_dim", default=768, type=int, help="Total batch size for training.")
-    parser.add_argument('--outdir', required=True, help='path to output directory')
+    # parser.add_argument('--outdir', required=True, help='path to output directory')
+    parser.add_argument('--outdir', default='.', help='path to output directory')
     parser.add_argument("--pool", type=str, default="att", help='Aggregating method: top, max, mean, concat, att, sum')
     parser.add_argument("--layer", type=int, default=1, help='Graph Layer.')
     parser.add_argument("--num_labels", type=int, default=2)
@@ -268,8 +269,8 @@ if __name__ == "__main__":
                         help="Run this for K-fold cross validation")
 
     parser.add_argument('--debug', action='store_true', help='Debug')
-
-    parser.add_argument('--config_file', type=str, required=True)
+    # parser.add_argument('--config_file',  type=str, required=True)
+    parser.add_argument('--config_file', default='P.ini',type=str)
     parser.add_argument('--postpretrain')
     parser.add_argument('--itp', action="store_true")
     args = parser.parse_args()

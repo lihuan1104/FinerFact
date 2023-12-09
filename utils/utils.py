@@ -17,13 +17,12 @@ def get_root_dir():
     Change this to the root data directory
     :return: root directory
     """
-    root = osp.join("..", "fake_news_data")
+    root = osp.join("..", "FinerFact")
     if os.name == "posix":
-        root = osp.join("..", "fake_news_data")
+        root = osp.join("..", "FinerFact")
     else:
-        root = osp.join("C:\\Workspace", "FakeNews", "fake_news_data")
+        root = osp.join(r"C:\Users\lh\Desktop", "CTI", "FinerFact")
     return root
-
 
 def get_processed_dir(exp_name=None):
     if exp_name is not None:

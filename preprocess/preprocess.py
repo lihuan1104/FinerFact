@@ -150,12 +150,24 @@ def preprocess(tokenizer, args):
 
 
 if __name__ == "__main__":
+
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('--asterisk', type=str, default='true', help='asterisk task (true, false)')
+    # parser.add_argument('--crf', type=str, default='true', help='crf task (true, false)')
+    # parser.add_argument('--rmdup', type=str, default='true', help='remove duplicate task (true, false)')
+    # parser.add_argument('--elip', type=str, default='false', help='ellipsis resolution (true, false)')
+    # parser.add_argument('--gname', type=str, default='graph', help='graph name')
+    # parser.add_argument('--input_file', type=str, help='input file')
+    # args = parser.parse_args()
+    # print(args)
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config_file', defalult='P.ini', type=str, required=True)
-    parser.add_argument("--reprocess",default='', action="store_true")
+    # parser.add_argument('--config_file', default='P.ini', type=str, required=True)
+    parser.add_argument('--config_file', default='P.ini', type=str)
+    parser.add_argument("--reprocess",default=True, action="store_true")
     parser.add_argument("--seed", default=2021, type=int, help="Random state")
-    parser.add_argument("--kfold", default=None, type=int, help="Number of folds K-fold cross validation")
-    parser.add_argument("--separate_inputs", action="store_true",
+    parser.add_argument("--kfold", default=5, type=int, help="Number of folds K-fold cross validation")
+    parser.add_argument("--separate_inputs", default=True, action="store_true",
                         help="Do we keep the social context inputs and external knowledge inputs as separate files? Or do we merge them?")
 
     args = parser.parse_args()
